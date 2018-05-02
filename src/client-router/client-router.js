@@ -4,14 +4,14 @@ Vue.use(VueRouter);
 
 
 import index from '../li-components/index/index.vue';
-import fixNav from '../li-components/fixNav/fixNav.vue';
-
-
+import details from '../li-components/details/details.vue';
+import ordering from '../li-components/details/ordering/menus.vue';
 
 const router = new VueRouter({
     routes:[
         {path:'/index',name:'index',component:index},
-        {path:'/fixNav',name:'fixNav',component:fixNav}
+        {path:'/details',name:'details',component:details,
+        children:[{path:'ordering',name:'ordering',component:ordering}]}
     ]
 })
 export default router; 

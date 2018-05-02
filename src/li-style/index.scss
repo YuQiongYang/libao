@@ -1,0 +1,128 @@
+//公共样式
+.active{
+    border-bottom:0.026667rem solid #FF6A6A;
+    font-weight:bold;
+}
+.choose{
+    font-weight: bold;
+    color:#FF6A6A;
+}
+.fade-enter-active{
+    transition:all .5s ease;
+    height:100px;
+}
+
+.fade-leave-active{
+    transition:all .5s ease;
+    height:0; 
+    opacity: 0; 
+}
+
+.fade-leave{
+    opacity: 1;
+    height:100px;
+}
+.fade-enter{
+    opacity:0;
+    height: 0;
+}
+h1{
+    position:relative;
+    z-index: -1;
+}
+.index{
+    height: 100%;
+    display:flex;
+    flex-direction:column;
+}
+.main{
+    flex:1;
+    overflow-x:hidden;
+}
+.main2{
+    flex:1;
+}
+.title{
+    display:flex;
+    justify-content:center;
+    line-height:0.773333rem;
+    border-top:0.053333rem solid #F3F3F3;
+    padding-top:0.2rem;
+    h3{
+        font-size:0.373333rem;
+    }
+    span{
+        display:inline-block;
+        margin:0 40px;
+    }
+}
+.order_t{
+    display:flex;
+    text-align:center;
+    line-height:1.04rem;
+    border-bottom:0.013333rem solid #ccc;
+    li{
+        flex:1;
+        font-size:0.346667rem;
+        span{
+            display:inline-block;
+            padding:0 0.133333rem;
+        }
+    }
+}
+.according{
+    li{
+        display:flex;
+        justify-content:space-between;
+        padding:0 0.853333rem;
+        line-height:1.066667rem;
+    }
+    i{
+        color:#FF6A6A;
+        font-weight:bold;
+    }
+}
+
+.restaurant{
+    padding-top:0.266667rem;
+    li{
+        display:flex;
+        justify-content:space-between;
+        padding:0.266667rem;
+        border-bottom:0.013333rem solid #ccc;
+    }
+}
+.content{
+    .brand{
+        display:inline-block;
+        background: #FFEE0E;
+        padding:0.053333rem 0.133333rem;
+        border-radius: 0.053333rem;
+    }
+    width:7.466667rem;
+    img{
+        display:inline-block;
+    }
+    section{
+        line-height:0.586667rem;
+        font-size:0.32rem;
+        padding:0.266667rem 0;
+    }
+    section:nth-of-type(1){
+        border-bottom:0.013333rem dashed #ccc;
+    }
+}
+.shou{
+    background-color:#FF6A6A;
+    color:#fff;
+    padding:0.053333rem 0.08rem;
+    margin-right:0.133333rem;
+    border-radius:0.053333rem; 
+}
+.te{
+    background-color:#58bc58;
+    color:#fff;
+    padding:0.053333rem 0.08rem;
+    margin-right:0.133333rem;
+    border-radius:0.053333rem; 
+}
