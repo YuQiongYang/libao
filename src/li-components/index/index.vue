@@ -1,23 +1,19 @@
 <template>
     <div class="index">
-        <div class="main">
-            <menus></menus>
-            <restaurant></restaurant>       
-        </div>
+        <liHeader></liHeader>
+            <mainContent></mainContent>
         <fixNav></fixNav>
     </div>
 </template>
 
 <script>
-    //不能以menu命名
-    import menus from './menus/menus';
-    //restaurant同时有js和vue文件的话要写全后缀名
-    import restaurant from './restaurant/restaurant.vue';
+    import liHeader from './index-top/liHeader.vue'; 
+    import mainContent from './mainContent/mainContent'
     import fixNav from '../fixNav/fixNav';
     export default{
         components:{
-            menus,
-            restaurant,
+            liHeader,
+            mainContent,
             fixNav        
         }
     }

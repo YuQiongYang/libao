@@ -1,0 +1,129 @@
+.header1 {
+  background: #F5F5F5;
+  width: 100%;
+  height: 100%;
+  display:flex;
+  flex-direction:column;
+  .header_lt{
+    flex:1;
+    ul {
+      display:flex;
+      padding: 0 0.390625rem;
+    }
+    .wode {
+      font-size:0.46875rem;
+      line-height:1.173333rem;
+      background:#FFE4E1;
+      color: #FF6A6A;
+      padding-left:0.359375rem;
+
+    }
+    .touxiang{
+      padding-top:0.666667rem;
+      padding-left:0.266667rem;
+    }
+  }
+
+}
+/********************LOGIN************/
+
+.login {
+  .liji1{
+    font-size:0.5625rem;
+   color: #FF6A6A;
+    display:block;
+  }
+ 
+  ul {
+    height: 3.125rem;
+    li {
+      p{
+        margin-top:0.65625rem;
+      }
+    }
+    .log {
+      padding-left:0.8rem;
+      line-height:0.8rem;
+      span{
+        display:inline-block;
+      }
+    }
+  }
+}
+/***************优惠***************/
+.youhui {
+  background: #ccc;
+  ul {
+    background: #fff;
+    justify-content: space-around;
+    height:2.0rem;
+    margin-bottom:0.266667rem;
+    li {
+      line-height:0.64rem;
+      color: #FF6A6A;
+      i {
+        display: block;
+        margin-top:0.293333rem;
+      }
+    }
+    .i1 {
+      font-size:0.333333rem;
+       color: #FF6A6A;
+    }
+  }
+}
+
+.dizhi dl {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  height: 1.25rem;
+  padding-left: 0.390625rem;
+  padding-right: 0.390625rem;
+  dd {
+    float: left;
+    line-height: 1.671875rem;
+    color: #FF6A6A;
+    span {
+      display: block;
+      padding-left: 0.9375rem;
+      margin-top: -1.875rem;
+    }
+  }
+}
+.jinbi dl {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  height: 1.25rem;
+  padding-left: 0.390625rem;
+  padding-right: 0.390625rem;
+  margin-top: 0.3125rem;
+  margin-bottom: 0.3125rem;
+  dd {
+    line-height: 1.25rem;
+    color: #FF6A6A;
+    span {
+      display: block;
+      padding-left: 0.9375rem;
+      margin-top: -1.40625rem;
+    }
+  }
+}
+.fixNao{
+    background-color:#FFE4E1;
+    position:fixed;
+    bottom:0;
+    width: 100%;
+    ul{
+        display:flex;
+        justify-content: space-between;
+        height:1.333333rem;
+        li{
+            flex:1;
+            text-align: center;
+            line-height:1.333333rem;
+        }
+    }
+}
+/**************************************login1.scss**********************************/ 

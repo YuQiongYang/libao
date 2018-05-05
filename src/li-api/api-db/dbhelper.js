@@ -10,20 +10,39 @@ mc.connect('mongodb://localhost:27017', (error, client) => {
 
 module.exports = {
     async select(_collection, _condition = {},type="id"){
-        //商品排序判断
+        //综合排序
         if(type=='id'){
             result = await db.collection(_collection).find(_condition).sort({"id":1}).toArray();
             return ar(result.length > 0, result);
         }
+        //销量最高
         if(type=='recent_order_num'){
-            result = await db.collection(_collection).find(_condition).sort({"recent_order_num":1}).toArray();
-            return ar(result.length > 0, result);
+            result = await db.collection(_collection).find(_condition).sort({"recent_order_num":-1}).toArray();
+             return ar(result.length > 0, result);
         }
+        //起送价最低
         if(type=='extra_fee'){
-            result = await db.collection(_collection).find(_condition).sort({"piecewise_agent_fee.extra_fee":-1}).toArray();
-            return ar(result.length > 0, result);
+            result = await db.collection(_collection).find(_condition).sort({"piecewise_agent_fee.extra_fee":1}).toArray();
+             return ar(result.length > 0, result);
         }
-        
+        //配送最快
+        if(type=='order_lead_time'){
+            result = await db.collection(_collection).find(_condition).sort({"order_lead_time":1}).toArray();
+        }
+        //配送费最低
+        if(type=='description'){
+            result = await db.collection(_collection).find(_condition).sort({"piecewise_agent_fee.description":1}).toArray();
+        }
+        //好评优先
+        if(type=='rating'){
+            result = await db.collection(_collection).find(_condition).sort({"rating":-1}).toArray();
+        }
+        //距离最近
+        if(type=='distance'){
+            result = await db.collection(_collection).find(_condition).sort({"distance":1}).toArray();
+        }
+        return ar(result.length > 0, result);
+
 
         //根据id获取数据
         

@@ -1,16 +1,30 @@
 .fixNav{
     background-color:#FFE4E1;
-    // position:fixed;
-    // bottom:0;
-    // width: 100%;
     ul{
         display:flex;
         justify-content: space-between;
         height:1.333333rem;
         li{
             flex:1;
+            color:#FF6A6A;
             text-align: center;
-            line-height:1.333333rem;
+            padding-top:0.135rem;
+            i{
+                display:block;
+                height:0.534rem;
+                font-size:0.655rem;
+                margin-bottom:0.123rem;
+            }
+            span{
+                display:block;
+                font-size:0.355rem;
+            }
         }
     }
+    .fixActive{
+        color:#fff;
+        background-color:#FF6A6A;
+    }
 }
+
+

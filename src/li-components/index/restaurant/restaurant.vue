@@ -9,18 +9,30 @@
                 <img :src="item.image_path" height="130" width="130" alt="" />
                 <div class="content">
                     <h3>
-                        <span v-if="" class="brand">品牌</span>
+                        <span class="brand">品牌</span>
                         <span>{{item.name}}</span>
                     </h3>
                     <section>
-                        <p>
-                            <img src="../../../images/9.png" alt="" />
-                            <span>{{item.rating}}</span>
-                            <span>月售{{item.recent_order_num}}单</span>
+                        <p class="rule">
+                            <a>
+                                <img src="../../../images/9.png" alt="" />
+                                <span>{{item.rating}}</span>
+                                <span>月售{{item.recent_order_num}}单</span>
+                            </a>
+                            <a>
+                                <span class="on_time" v-if="item.delivery_mode">准时达</span>
+                                <span class="special" v-if="item.delivery_mode">蜂鸟专送</span>
+                            </a>
                         </p>
-                        <p>
-                            <span>￥{{item.piecewise_agent_fee.extra_fee}}元起送</span> 
-                            <span>{{item.piecewise_agent_fee.description}}</span>  
+                        <p class="rule">
+                            <a>
+                                <span class="at_least">￥{{(item.piecewise_agent_fee.extra_fee).toFixed(2)}}元起送</span> 
+                                <span>{{item.piecewise_agent_fee.description}}</span>
+                            </a>
+                            <a>
+                                <span>{{item.distance}}m</span>
+                                <span>{{item.order_lead_time}}分钟</span> 
+                            </a>
                         </p>
                     </section>
                     <section>
@@ -50,7 +62,6 @@ import http from '../../../client-utils/httpclient.js'
         methods:{
             changeId:function(id){
                 this.$store.state.params.id = id;
-                console.log(this.$store.state.params.id)
             }
         }
     }

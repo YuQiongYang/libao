@@ -1,0 +1,48 @@
+.dingdan{
+  display:flex;
+  flex-direction:column;
+  width: 100%;
+  height: 100%;
+}
+.dingdanContent{
+  flex:1;
+  overflow-x:hidden;
+}
+.Diheader ul {
+  display: flex;
+  justify-content: flex-start;
+  height: 1.25rem;
+  background: #FFE4E1;
+  li {
+    color: #FF6A6A;
+    font-size: 0.46875rem;
+    line-height: 1.140625rem;
+    padding-left: 0.359375rem;
+  }
+}
+
+.min ul {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5625rem;
+}
+
+.minq {
+  ul {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.46875rem;
+    li {
+      color: #FF6A6A;
+      font-size: 0.46875rem;
+    }
+  }
+  input {
+    border:0.015625rem solid #FFE4E1;
+    width:3.90625rem;
+    height: 0.9375rem;
+    color: #FF6A6A;
+    font-size: 0.4375rem;
+    border-radius:0.15625rem 0.15625rem;
+  }
+}

@@ -7,17 +7,15 @@ const state = {
 }
 
 const mutations = {
-    changeParams(state){
+    changeDataset(state){
         http.getCt('restaurant',state.params).then((res) => {
             state.dataset = res.data
-            console.log(state.params)
-            console.log(state.dataset)
         })
     }
 }
 const actions = {
-    changeParams(content){
-        content.commit('changeParams');
+    changeDataset(content){
+        content.commit('changeDataset');
     }
 }
 export default {

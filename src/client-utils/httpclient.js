@@ -1,6 +1,6 @@
 import router from '../client-router/client-router'
 import axios from 'axios'
-const baseUrl = 'http://localhost:88/'
+const baseUrl = 'http://10.3.133.72:88/'
 
 let filterUrl = (_url) => {
   if (_url && _url.startsWith('http')) {
