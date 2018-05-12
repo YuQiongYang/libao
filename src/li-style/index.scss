@@ -13,7 +13,6 @@
 }
 .m_fixed{
     position:fixed;
-    top:1.2rem;
     left:0;
     background:#fff;
 }
@@ -24,12 +23,12 @@ i{
     display:inline-block;
 }
 .shou,.new,.te,.jian,.zeng,.fan,.ling{
+    display:inline-block;
     background-color:#FF6A6A;
     color:#fff;
-    padding:0.053333rem 0.08rem;
     margin-right:0.133333rem;
     border-radius:0.053333rem; 
-    line-height:0.4rem;
+    padding:0.026667rem 0.106667rem;
 }
 .new{
     background-color:#58bc58;
@@ -47,12 +46,12 @@ i{
     background-color:#F07373;
 }
 .pin,.bao,.xin,.piao,.fu,.zhun{
+    display:inline-block;
     border:0.013333rem solid #FF6A6A;
     color:#FF6A6A;
-    padding:0.053333rem 0.08rem;
+    padding:0 0.08rem;
     margin-right:0.133333rem;
     border-radius:0.053333rem;
-    line-height:0.4rem;
 }
 .pin{
     color:#58bc58;
@@ -316,6 +315,13 @@ h1{
         }
     }
 }
+.orderFixed{
+    position:fixed;
+    width: 100%;
+    top:1.173333rem;
+    left:0;
+    z-index: 100;
+}
 .indexFixed{
     position: fixed;
     background-color: #Fff;
@@ -366,7 +372,7 @@ h1{
 }
 .filter{
     background-color:#FAFAFA;
-    height:10.666667rem;
+    height:9.333333rem;
     padding:0.133333rem 0;
     overflow-y:scroll;
     font-size:0.346667rem;
@@ -388,10 +394,12 @@ h1{
     }
     li{
         width: 33%;
-        padding-left:0.506667rem;
+        padding:0 0.186667rem;
         background-color:#fff;
         border:0.013333rem solid #EEEEEE;
         border-radius:0.053333rem;
+        display:flex;
+        align-items:center;
     }
     .choose2{
         color:#FF6A6A;
@@ -408,7 +416,6 @@ h1{
     li{
         display:flex;
         justify-content:space-between;
-//      align-items: center;
         padding:0.266667rem;
         border-bottom:0.013333rem solid #ccc;
         img{

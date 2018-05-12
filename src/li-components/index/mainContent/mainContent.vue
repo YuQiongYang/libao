@@ -1,7 +1,7 @@
 <template>
     <div class="mainContent">
         <indexTop></indexTop>
-        <menus></menus>
+        <menus :orderFixed="orderFixed"></menus>
         <restaurant></restaurant>       
     </div>
 </template>
@@ -9,34 +9,35 @@
     import indexTop from '../index-top/top/top.vue';
     import menus from '../menus/menus';
     import restaurant from '../restaurant/restaurant.vue';
+    let scrollTop;
+    let height;
     export default{
         components:{
             indexTop,
             menus,
             restaurant       
+        },
+        data(){
+            return{
+                orderFixed:false
+            }
+        },
+        mounted(){
+            $('.mainContent')[0].addEventListener('scroll', this.Scroll);
+        },
+        methods:{
+            Scroll(){
+                scrollTop = $('.mainContent')[0].scrollTop;
+                height = $('.main')[0].offsetHeight;
+                if(scrollTop >= height){
+                    this.orderFixed = true
+                } else {
+                    this.orderFixed = false
+                }
+            },
+            destroyed(){
+                $('.mainContent')[0].removeEventListener('scroll', this.Scroll)
+            }
         }
-        // mounted(){
-        //     let scroll = this.Scroll;
-        //     setTimeout(function(){
-        //         window.addEventListener('scroll', scroll());
-        //     },1000)
-            
-        //     console.log('999')
-        // },
-        // methods:{
-        //     Scroll(){
-        //         var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-        //         let height = document.querySelector('.main').offsetHeight;
-        //         console.log(scrollTop)
-        //         if(scrollTop >= height){
-        //               this.searchBarFixed = true
-        //         } else {
-        //             this.searchBarFixed = false
-        //         }
-        //     },
-        //     destroyed(){
-        //         window.removeEventListener('scroll', this.Scroll)
-        //     }
-        // }
     }
 </script>

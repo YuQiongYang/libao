@@ -12,5 +12,4 @@
 
 <style lang="scss">
     @import '../../li-style/base.scss';
-    @import '../../li-style/index.scss';
 </style>

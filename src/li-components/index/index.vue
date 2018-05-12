@@ -1,7 +1,7 @@
 <template>
     <div class="index">
         <liHeader></liHeader>
-            <mainContent></mainContent>
+        <mainContent></mainContent>
         <fixNav></fixNav>
     </div>
 </template>
@@ -18,4 +18,8 @@
         }
     }
 </script>
+
+<style lang="scss">
+    @import '../../li-style/index.scss';
+</style>
 

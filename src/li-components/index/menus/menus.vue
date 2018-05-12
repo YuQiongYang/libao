@@ -6,34 +6,34 @@
             <span>——</span>      
         </div>
         <div class="order">
-            <ul class="order_t">
-                <li @click="changeShow(0,$event);changeShow2(0,$event);slide()">
+            <ul :class="['order_t',{orderFixed:orderFixed}]">
+                <li @click="changeShow($event);changeShow2($event);slide()">
                     <span v-text="sort" @click="num='0'" :class="{active:num=='0',sort:true}"></span>
                 </li>
                 </a>
-                <li @click="changeShow(0,$event);changeShow2(0,$event);slide();changeText2(0,$event)">
+                <li @click="changeShow($event);changeShow2($event);slide();changeText2($event)">
                     <span @click="num='1';" :class="{active:num=='1'}" path="comment">
                         好评优先
                     </span>
                 </li>
-                <li @click="changeShow(0,$event);changeShow2(0,$event);slide();changeText2(0,$event)">
+                <li @click="changeShow($event);changeShow2($event);slide();changeText2($event)">
                     <span @click="num='2'" :class="{active:num=='2'}" path="shortest">距离最近</span>
                 </li>
-                <li @click="changeShow(0,$event);changeShow2(0,$event);slide()">
+                <li @click="changeShow($event);changeShow2($event);slide()">
                     <span @click="num='3'" :class="{active:num=='3',shaixuan:true}">筛选</span>
                 </li>
             </ul>
             <div class="order_b" v-if="show">
                 <ul class="according">
                     <li v-for="(obj,idx) in according"  
-                        @click="choose=idx;changeShow(0,$event);changeText(idx);slide()" 
+                        @click="choose=idx;changeShow($event);changeText(idx);slide()" 
                         :class="{choose:choose==idx}" 
                         :key="obj.path">
                         <span v-text="obj.text"></span>
                         <i v-if="choose==idx">√</i>
                     </li>
                 </ul>
-                <div class="indexCover" @click="changeShow(0,$event);slide()"></div>
+                <div class="indexCover" @click="changeShow($event);slide()"></div>
             </div>
             <div class="order_b2" v-if="show2">
                 <div class="filter">
@@ -85,18 +85,19 @@
                 <div class="btn">
                     <span 
                         v-for="(item,idx) in btn" 
-                        @click="btn2=idx;btnClick(0,$event);slide()"
+                        @click="btn2=idx;btnClick($event);slide()"
                         :class="{btn_choose:btn2==idx,btn:true}">
                         {{item.text}}
                     </span>
                 </div>
-                <div class="indexCover" @click="changeShow2(0,$event);slide()"></div>
+                <div class="indexCover" @click="changeShow2($event);slide()"></div>
             </div>
         </div>   
     </div>    
 </template>
 <script type="text/javascript">
     export default{
+        props:['orderFixed'],
         data(){
             return {
                 according: [
@@ -153,15 +154,16 @@
         },
         methods:{
             //改变according的状态
-            changeShow:function(i,e){
+            changeShow:function(e){
                 if(e.target.className.includes('sort')){
                     this.show=!this.show
+
                 }else{
                     this.show=false
                 }       
             },
             //改变filter的状态
-            changeShow2:function(i,e){
+            changeShow2:function(e){
                 if(e.target.className.includes('shaixuan')){
                     this.show2=!this.show2
                 }else{
@@ -178,7 +180,7 @@
                 this.$store.dispatch('changeDataset');
             },
             //根据好评优先、距离最近排序
-            changeText2:function(i,e){
+            changeText2:function(e){
                 this.$store.state.params.params.type=e.target.getAttribute('path');
                 this.$store.dispatch('changeDataset');
             },
@@ -187,20 +189,22 @@
                 if(this.show||this.show2){
                     $('.mainContent').css('overflow','hidden');
                     $('.order').addClass('m_fixed');
-
+                    $('.order').animate({top:'1.173333rem'},200);
                 }else{
-                    $('.mainContent').css('overflow','scroll');
-                    $('.order').removeClass('m_fixed');
+                    //不能写overflowX,hidden，因为相同属性才能覆盖
+                    $('.mainContent').css('overflowY','Scroll');
+                    $('.order').removeClass('m_fixed');           
+                    $(".order").removeAttr("style");
                 }     
             },
-            btnClick:function(i,e){
+            btnClick:function(e){
                 if(e.target.innerText=="清空"){
                     this.server2=null;
                     this.activity2=null;
                     this.average2=null;
                     this.property2=null;
                 }else{
-                    this.changeShow2(i,e)
+                    this.changeShow2(e)
                 }
             }
         }
